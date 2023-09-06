@@ -2,7 +2,7 @@
 Author:--Sanjiv Paul
 Date:-18-July-2021
 
-About:- This is an artificial intelligence project, which we named Jarvis, which is a part of a   scifi movie Iron Man. This is a personal assistant like Google Assistant, Alexa, or Siri. With this Jarvis_project, we can get some work done automatically like opening youtube, opening a browser, and doing some searches on Wikipedia.
+About:- This is an artificial intelligence project, which I named Jarvis, which is part of a sci-fi movie Iron Man. This is a personal assistant like Google Assistant, Alexa, or Siri. With this Jarvis_project, we can get some work done automatically like opening youtube, opening a browser, and doing some searches on Wikipedia.
 
 >>Here we have used modules:
 1.pyttsx3 --- pip install pyttsx3
