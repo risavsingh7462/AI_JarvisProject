@@ -27,7 +27,7 @@ voices = engine.getProperty('voices')
 # print(voices[1].id)
 engine.setProperty('voice', voices[0].id)
 
-
+# speaking function
 def speak(audio):
     '''
     Speak function will Speak our audio string
@@ -35,7 +35,7 @@ def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 
-
+# wish user 
 def wishMe():
     #WishMe=> return wish according to time.
     hour = int(datetime.datetime.now().hour)
@@ -51,6 +51,7 @@ def wishMe():
     speak("I am Jarvis Sir. Please tell me how may i help you")
 
 
+# take users input from the microphone
 def takeCommand():
     #takeCommand function takes input from the user microphone and returns string as output
     r = sr.Recognizer()
@@ -71,13 +72,18 @@ def takeCommand():
 
     return query
 
-
+# main fruntion
 if __name__ == "__main__":
     # speak("sanjiv is good boy")
-    wishMe()
+    wishMe() #when code is running wish user
+
+    # infinite loop 
     while True:
+        # query is a variable to store the user's  input in lowercase.
         query = takeCommand().lower()
         # logic for executing tasks based on query
+
+        # If user say search something on Wikipedia.
         if 'wikipedia' in query:
             speak('Searching Wikipedia....')
             query = query.replace("wikipedia", "")
@@ -85,10 +91,13 @@ if __name__ == "__main__":
             speak("According to wikipedia")
             print(results)
             speak(results)
+            
         elif 'open youtube' in query:
             webbrowser.open("youtube.com")
+            
         elif 'open google' in query:
             webbrowser.open("google.com")
+            
         elif 'open stackoverflow' in query:
             webbrowser.open("stackoverflow.com")
 
