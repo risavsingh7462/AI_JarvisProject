@@ -2,15 +2,16 @@
 Author:--Sanjiv Paul
 Date:-18-July-2021
 
-About:- This is an artificial intelligence project, which I named Jarvis, which is part of a sci-fi movie Iron Man. This is a personal assistant like Google Assistant, Alexa, or Siri. With this Jarvis_project, we can get some work done automatically like opening youtube, opening a browser, and doing some searches on Wikipedia.
+About:- This is an artificial intelligence project I named Jarvis, part of a sci-fi movie Iron Man. This is a personal assistant like Google Assistant, Alexa, or Siri. With this Jarvis_project, we can get some work done automatically like opening youtube, opening a browser, and doing some searches on Wikipedia.
 
 >>Here we have used modules:
 1.pyttsx3 --- pip install pyttsx3
-2.speech_recognition
+2.speech_recognition --- pip install SpeechRecognition==2.1.3
 3.datetime
-4.wikipedia
+4.wikipedia --- pip install wikipedia
 5.Webbrowser
 6.os
+7.pyaudio --- pip install PyAudio
 
 
 '''
@@ -36,10 +37,7 @@ def speak(audio):
 
 
 def wishMe():
-    '''
-    In the function in wishMe, we have imported the datetime module, what will happen, whenever we turn on Jarvis, we will wish.
-
-    '''
+    #WishMe=> return wish according to time.
     hour = int(datetime.datetime.now().hour)
     if hour >= 0 and hour < 12:
         speak("Good Morning!")
@@ -54,9 +52,7 @@ def wishMe():
 
 
 def takeCommand():
-    '''
-    It takes microphone input from the user and returns strin output
-    '''
+    #takeCommand function takes input from the user microphone and returns string as output
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Listening....")
@@ -77,7 +73,7 @@ def takeCommand():
 
 
 if __name__ == "__main__":
-    # speak("harry is good boy")
+    # speak("sanjiv is good boy")
     wishMe()
     while True:
         query = takeCommand().lower()
@@ -102,7 +98,7 @@ if __name__ == "__main__":
             #    songs1 = songs.split(",")
             print(songs)
             os.startfile(os.path.join(music_dir, songs[0]))
-            # yahan hum len function laga kar random module use kar sakte hai jisse humara jarvis har bar ek new song play karega
+            
 
         elif 'the time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
